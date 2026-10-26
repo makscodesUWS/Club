@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Eastern European Culture Club</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap&subset=cyrillic,latin-ext" rel="stylesheet">
+<style>
+:root{
+  --ink:#14213d; --paper:#f3f5f8; --surface:#ffffff; --muted:#4a5670;
+  --red:#a3162a; --sun:#f2b632; --line:#d5dbe4; --on-red:#ffffff;
+  --stitch:%23a3162a;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  --head:"Rubik","Helvetica Neue",Arial,sans-serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ink:#eef1f7; --paper:#101a33; --surface:#17244a; --muted:#aab4cc;
+    --red:#ff6b7d; --sun:#f2b632; --line:#2a3963; --on-red:#101a33; --stitch:%23ff6b7d;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#eef1f7; --paper:#101a33; --surface:#17244a; --muted:#aab4cc;
+  --red:#ff6b7d; --sun:#f2b632; --line:#2a3963; --on-red:#101a33; --stitch:%23ff6b7d;
+  color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.1rem;line-height:1.65}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.25rem}
+h1,h2,h3{font-family:var(--head);line-height:1.1;margin:0}
+.stitch{height:30px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='30' fill='var(--stitch)'%3E%3Cg fill='%23a3162a'%3E%3Crect x='9' y='3' width='3' height='3'/%3E%3Crect x='6' y='6' width='3' height='3'/%3E%3Crect x='12' y='6' width='3' height='3'/%3E%3Crect x='3' y='9' width='3' height='3'/%3E%3Crect x='15' y='9' width='3' height='3'/%3E%3Crect x='0' y='12' width='3' height='3'/%3E%3Crect x='18' y='12' width='3' height='3'/%3E%3Crect x='3' y='15' width='3' height='3'/%3E%3Crect x='15' y='15' width='3' height='3'/%3E%3Crect x='6' y='18' width='3' height='3'/%3E%3Crect x='12' y='18' width='3' height='3'/%3E%3Crect x='9' y='21' width='3' height='3'/%3E%3Crect x='9' y='12' width='3' height='3'/%3E%3C/g%3E%3C/svg%3E");background-repeat:repeat-x;background-position:center;opacity:.9}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .stitch{filter:brightness(1.5) saturate(.8)}}
+:root[data-theme="dark"] .stitch{filter:brightness(1.5) saturate(.8)}
+
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--paper);z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem 0;flex-wrap:wrap}
+.logo{font-family:var(--head);font-weight:800;text-decoration:none;font-size:1.05rem}
+.nav ul{display:flex;gap:1.4rem;list-style:none;margin:0;padding:0;font-family:var(--head);font-weight:500;font-size:.95rem}
+.nav a{text-decoration:none}
+.nav a:hover{text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:5px;text-decoration-thickness:3px}
+
+.hero{padding:4rem 0 3rem}
+.hero h1{font-size:clamp(2.6rem,8vw,5.6rem);font-weight:800;letter-spacing:-.02em;max-width:14ch}
+.hero p.lead{font-size:1.3rem;max-width:36rem;margin:1.5rem 0 2rem;color:var(--muted)}
+.hello{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;margin:2.5rem 0 0;padding:0;list-style:none;font-family:var(--head);font-weight:700;font-size:1.15rem}
+.hello li:nth-child(odd){color:var(--red)}
+.hello small{font-family:var(--body);font-weight:400;font-style:italic;color:var(--muted);font-size:.85rem;margin-left:.3rem}
+.btn{display:inline-block;background:var(--red);color:var(--on-red);font-family:var(--head);font-weight:700;padding:.85rem 1.6rem;border-radius:4px;text-decoration:none;border:2px solid var(--red)}
+.btn:hover{background:transparent;color:var(--red)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink);margin-left:.6rem}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+
+section{padding:3.5rem 0}
+section h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:1.2rem}
+.about{display:grid;grid-template-columns:1fr;gap:2rem}
+@media(min-width:48rem){.about{grid-template-columns:1.2fr 1fr;gap:4rem}}
+.about p{max-width:38rem;margin:0 0 1rem}
+.facts{margin:0;padding:1.5rem;background:var(--surface);border-left:6px solid var(--sun);align-self:start}
+.facts dt{font-family:var(--head);font-weight:700;margin-top:1rem}
+.facts dt:first-child{margin-top:0}
+.facts dd{margin:0;color:var(--muted)}
+
+.events{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.events li{display:grid;grid-template-columns:5.5rem 1fr;gap:1.2rem;padding:1.3rem 0;border-bottom:1px solid var(--line)}
+.date{font-family:var(--head);font-weight:800;line-height:1}
+.date b{display:block;font-size:2.3rem;color:var(--red)}
+.date span{font-size:.9rem;font-weight:500}
+.events h3{font-size:1.3rem;margin-bottom:.3rem}
+.events p{margin:0;color:var(--muted)}
+
+.regions{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:2rem 2.5rem}
+.regions h3{font-size:1.2rem;padding-bottom:.5rem;border-bottom:3px solid var(--sun);margin-bottom:.7rem}
+.regions p{margin:0;color:var(--muted);font-size:1rem}
+
+.join{background:var(--ink);color:var(--paper);text-align:left}
+.join h2{max-width:22ch}
+.join p{max-width:34rem;margin:0 0 1.8rem;opacity:.9}
+.join .btn{background:var(--sun);border-color:var(--sun);color:#14213d}
+.join .btn:hover{background:transparent;color:var(--sun)}
+.join .btn.ghost{color:var(--paper);border-color:var(--paper);background:transparent}
+.join .btn.ghost:hover{background:var(--paper);color:#14213d}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .join{background:#0a1226;color:#eef1f7}:root:not([data-theme="light"]) .join .btn.ghost:hover{color:#14213d}}
+:root[data-theme="dark"] .join{background:#0a1226;color:#eef1f7}
+
+footer{padding:2rem 0;font-size:.95rem;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.8rem}
+.ph{background:color-mix(in srgb,var(--sun) 35%,transparent);padding:0 .25rem}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap nav">
+    <a class="logo" href="#top">Eastern European Culture Club</a>
+    <nav aria-label="Main"><ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#events">Events</a></li>
+      <!-- <li><a href="#cultures">Cultures</a></li> -->
+      <li><a href="#join">Join</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="stitch" aria-hidden="true"></div>
+  <div class="wrap hero">
+    <h1>Food, language and traditions from the east of Europe.</h1>
+    <p class="lead">A student club for anyone who grew up with these cultures, is curious about them, or just wants dumplings and good company. No background required.</p>
+    <a class="btn" href="#join">Join the club</a><a class="btn ghost" href="#events">See upcoming events</a>
+    <ul class="hello" aria-label="Welcome in several languages">
+      <li lang="uk">Ласкаво просимо<small>Ukrainian</small></li>
+      <li lang="pl">Witamy<small>Polish</small></li>
+      <li lang="ru">Добро пожаловать<small>Russian</small></li>
+      <li lang="ro">Bine ați venit<small>Romanian</small></li>
+      <li lang="cs">Vítejte<small>Czech</small></li>
+      <li lang="bg">Добре дошли<small>Bulgarian</small></li>
+      <li lang="hu">Isten hozott<small>Hungarian</small></li>
+    </ul>
+  </div>
+  <div class="stitch" aria-hidden="true"></div>
+
+  <section id="about"><div class="wrap about">
+    <div>
+      <h2>About us</h2>
+      <p>We are a student-run club at <span class="ph">[Your University]</span> that brings together people connected to Eastern Europe, from Poland to the Caucasus and from the Baltics to the Balkans.</p>
+      <p>We cook together, practice languages, watch films, and celebrate holidays the way our families do. Some members are heritage speakers; others have never been. Everyone gets a seat at the table.</p>
+    </div>
+    <dl class="facts">
+      <dt>Meetings</dt><dd><span class="ph">[Thursdays, 6 pm, Student Union room 204]</span></dd>
+      <dt>Open to</dt><dd>All students, any year, any background</dd>
+      <dt>Cost</dt><dd><span class="ph">[Free; some events ask for a small food contribution]</span></dd>
+    </dl>
+  </div></section>
+
+  <section id="events" style="background:var(--surface)"><div class="wrap">
+    <h2>Upcoming events</h2>
+    <p style="border-top:2px solid var(--ink);margin:0;padding-top:1.3rem;color:var(--muted)">Coming soon. Check back for our upcoming events.</p>
+  </div></section>
+
+  <!-- <section id="cultures"><div class="wrap">
+    <h2>What we celebrate</h2>
+    <div class="regions">
+      <div><h3>Slavic traditions</h3><p>Embroidery, folk songs, Easter egg painting (pysanky), and winter customs from Poland, Ukraine, Belarus, Czechia, Slovakia and beyond.</p></div>
+      <div><h3>Food and drink</h3><p>Borscht, pierogi, pelmeni, sarmale, kvass and everything in between. Recipes get passed around at every meeting.</p></div>
+      <div><h3>Languages</h3><p>From Cyrillic basics to everyday phrases. We swap tips and help each other with pronunciation.</p></div>
+      <div><h3>History and arts</h3><p>Music, literature, film and history talks, led by members and invited guests.</p></div>
+    </div>
+  </div></section> -->
+
+  <section id="join" class="join"><div class="wrap">
+    <h2>Come to our next meeting.</h2>
+    <p>Send us a message and we will add you to the group chat and mailing list.</p>
+    <a class="btn" href="mailto:club@youruniversity.edu?subject=I%20want%20to%20join">Email us</a><a class="btn ghost" href="#">Instagram <span class="ph" style="color:inherit;background:none">[link]</span></a>
+  </div></section>
+</main>
+
+<footer><div class="wrap">
+  <span>© 2026 Eastern European Culture Club, <span class="ph">[Your University]</span></span>
+  <span>Registered student organization</span>
+</div></footer>
+</body>
+</html>
